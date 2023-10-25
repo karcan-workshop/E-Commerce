@@ -63,33 +63,54 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Functions\" />
-    <Folder Include="dbo\Functions\Scalar-valued Functions" />
+    <Folder Include="Scripts" />
+    <Folder Include="Source" />
+    <Folder Include="Source\dbo" />
+    <Folder Include="Source\dbo\Tables" />
+    <Folder Include="Source\dbo\Functions" />
+    <Folder Include="Source\dbo\Functions\Scalar-valued Functions" />
+    <Folder Include="Scripts\Post Deployments" />
+    <Folder Include="Scripts\Pre Deployments" />
+    <Folder Include="Scripts\Post Deployments\Data" />
+    <Folder Include="Source\dbo\Functions\Inline Functions" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Functions\Scalar-valued Functions\Fn_CheckIfDiscountIsDuplicate.sql" />
-    <Build Include="dbo\Tables\AdministrativeBoundaries.sql" />
-    <Build Include="dbo\Tables\AdministrativeBoundaryPolygons.sql" />
-    <Build Include="dbo\Tables\Brands.sql" />
-    <Build Include="dbo\Tables\Categories.sql" />
-    <Build Include="dbo\Tables\CategoryFeatures.sql" />
-    <Build Include="dbo\Tables\CurrencySymbols.sql" />
-    <Build Include="dbo\Tables\CustomerAddresses.sql" />
-    <Build Include="dbo\Tables\Customers.sql" />
-    <Build Include="dbo\Tables\CustomerSessionHistory.sql" />
-    <Build Include="dbo\Tables\CustomerSessions.sql" />
-    <Build Include="dbo\Tables\Descriptions.sql" />
-    <Build Include="dbo\Tables\Discounts.sql" />
-    <Build Include="dbo\Tables\Models.sql" />
-    <Build Include="dbo\Tables\ProductAndCategoryAssignments.sql" />
-    <Build Include="dbo\Tables\ProductAndDescriptionAssignments.sql" />
-    <Build Include="dbo\Tables\ProductFeatures.sql" />
-    <Build Include="dbo\Tables\ProductImages.sql" />
-    <Build Include="dbo\Tables\ProductPrices.sql" />
-    <Build Include="dbo\Tables\ProductReviews.sql" />
-    <Build Include="dbo\Tables\Products.sql" />
-    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="Source\dbo\Tables\Brands.sql" />
+    <Build Include="Source\dbo\Tables\Categories.sql" />
+    <Build Include="Source\dbo\Tables\CategoryFeatures.sql" />
+    <Build Include="Source\dbo\Tables\CurrencySymbols.sql" />
+    <Build Include="Source\dbo\Tables\CustomerAddresses.sql" />
+    <Build Include="Source\dbo\Tables\Customers.sql" />
+    <Build Include="Source\dbo\Tables\CustomerSessionHistory.sql" />
+    <Build Include="Source\dbo\Tables\CustomerSessions.sql" />
+    <Build Include="Source\dbo\Tables\Descriptions.sql" />
+    <Build Include="Source\dbo\Tables\Discounts.sql" />
+    <Build Include="Source\dbo\Tables\Models.sql" />
+    <Build Include="Source\dbo\Tables\ProductAndCategoryAssignments.sql" />
+    <Build Include="Source\dbo\Tables\ProductAndDescriptionAssignments.sql" />
+    <Build Include="Source\dbo\Tables\ProductFeatures.sql" />
+    <Build Include="Source\dbo\Tables\ProductImages.sql" />
+    <Build Include="Source\dbo\Tables\ProductPrices.sql" />
+    <Build Include="Source\dbo\Tables\ProductReviews.sql" />
+    <Build Include="Source\dbo\Tables\Products.sql" />
+    <Build Include="Source\dbo\Tables\Users.sql" />
+    <Build Include="Source\dbo\Functions\Scalar-valued Functions\Fn_CheckIfDiscountIsDuplicate.sql" />
+    <Build Include="Source\dbo\Tables\AdministrativeBoundaries.sql" />
+    <Build Include="Source\dbo\Tables\AdministrativeBoundaryPolygons.sql" />
+    <Build Include="Source\dbo\Functions\Inline Functions\Fn_GetCategoryChildList.sql" />
+    <Build Include="Source\dbo\Functions\Inline Functions\Fn_GetCategoryParentList.sql" />
+    <Build Include="Source\dbo\Functions\Inline Functions\Fn_GetDiscount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Post Deployments\Data\Users.sql" />
+    <None Include="E-Commerce.DB.publish.xml" />
+    <None Include="Scripts\Post Deployments\Data\Categories.sql" />
+    <None Include="Scripts\Post Deployments\Data\Discounts.sql" />
   </ItemGroup>
 </Project>

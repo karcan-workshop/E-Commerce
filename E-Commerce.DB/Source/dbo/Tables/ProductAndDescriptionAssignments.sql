@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[ProductAndDescriptionAssignments] (
-    [ProductID]         INT             NULL,
-    [DescriptionID]     INT             NULL,
+    [ProductID]         INT             NOT NULL,
+    [DescriptionID]     INT             NOT NULL,
     [IsActive]          BIT             NOT NULL        CONSTRAINT [DF_ProductAndDescriptionAssignments_IsActive] DEFAULT ((1)),
     [IsDeleted]         BIT             NOT NULL        CONSTRAINT [DF_ProductAndDescriptionAssignments_IsDeleted] DEFAULT ((0)),
     [CreateUserID]      INT             NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[ProductAndDescriptionAssignments] (
     [ModifyUserID]      INT             NULL,
     [ModifyDate]        DATETIME        NULL,
 
-    CONSTRAINT [PK_ProductAndCategoryAssignments]
+    CONSTRAINT [PK_ProductAndDescriptionAssignments]
         PRIMARY KEY CLUSTERED ([ProductID] ASC, [DescriptionID] ASC)
         WITH (FILLFACTOR = 70),
 
@@ -21,7 +21,7 @@ CREATE TABLE [dbo].[ProductAndDescriptionAssignments] (
     CONSTRAINT [FK_ProductAndDescriptionAssignments_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),
 
-    CONSTRAINT [FK_ProductAndDescriptionAssignments_CreateUserID_Users] 
+    CONSTRAINT [FK_ProductAndDescriptionAssignments_ModifyUserID_Users] 
         FOREIGN KEY ([ModifyUserID]) REFERENCES [dbo].[Users] ([ID])
 );
 

@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Descriptions] (
     CONSTRAINT [FK_Descriptions_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),
 
-    CONSTRAINT [FK_Descriptions_CreateUserID_Users] 
+    CONSTRAINT [FK_Descriptions_ModifyUserID_Users] 
         FOREIGN KEY ([ModifyUserID]) REFERENCES [dbo].[Users] ([ID])
 );
 GO

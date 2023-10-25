@@ -21,7 +21,7 @@ CREATE TABLE [dbo].[ProductAndCategoryAssignments] (
     CONSTRAINT [FK_ProductAndCategoryAssignments_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),
 
-    CONSTRAINT [FK_ProductAndCategoryAssignments_CreateUserID_Users] 
+    CONSTRAINT [FK_ProductAndCategoryAssignments_ModifyUserID_Users] 
         FOREIGN KEY ([ModifyUserID]) REFERENCES [dbo].[Users] ([ID])
 );
 

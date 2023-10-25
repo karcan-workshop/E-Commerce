@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[ProductReviews] (
     [ProductID]         INT             NOT NULL,
     [CustomerID]        INT             NOT NULL,
-    [Rate]              SMALLINT        NOT NULL        CONSTRAINT [CHK_ProductReviews_Rate] CHECK ([Rate] BETWEEN 1 AND 5),
+    [Rate]              SMALLINT        NOT NULL        CONSTRAINT [CHK_ProductReviews_Rate] CHECK ([Rate] >= (1) AND [Rate] <= (5)),
     [Description]       NVARCHAR(512)   NULL,
     [AppliedUserID]     INT             NULL,
     [AppliedDate]       DATETIME        NULL,

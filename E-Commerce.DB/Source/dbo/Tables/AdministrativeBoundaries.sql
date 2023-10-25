@@ -20,10 +20,8 @@ CREATE TABLE [dbo].[AdministrativeBoundaries] (
     CONSTRAINT [FK_AdministrativeBoundaries_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),
 
-    CONSTRAINT [FK_AdministrativeBoundaries_CreateUserID_Users] 
+    CONSTRAINT [FK_AdministrativeBoundaries_ModifyUserID_Users] 
         FOREIGN KEY ([ModifyUserID]) REFERENCES [dbo].[Users] ([ID])
 );
-
-
 GO
 

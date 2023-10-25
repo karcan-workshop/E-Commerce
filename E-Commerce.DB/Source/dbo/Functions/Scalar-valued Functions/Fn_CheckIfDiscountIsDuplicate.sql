@@ -27,6 +27,8 @@ BEGIN
             AND ((@pModelID IS NULL AND ModelID IS NULL) OR d.ModelID = @pModelID)
             AND ((@pProductID IS NULL AND ProductID IS NULL) OR d.ProductID = @pProductID)
             AND d.ID != @pID
+            AND d.IsActive = 1
+            AND d.IsDeleted = 0
     )
         RETURN 1;
     RETURN 0;

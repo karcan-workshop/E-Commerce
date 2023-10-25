@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[Discounts] (
     CONSTRAINT [FK_Discounts_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),
 
-    CONSTRAINT [FK_Discounts_CreateUserID_Users] 
+    CONSTRAINT [FK_Discounts_ModifyUserID_Users] 
         FOREIGN KEY ([ModifyUserID]) REFERENCES [dbo].[Users] ([ID]),
 
     CONSTRAINT [DF_Discounts_IsDuplicate] 

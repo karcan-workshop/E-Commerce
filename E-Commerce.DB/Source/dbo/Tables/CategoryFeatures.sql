@@ -20,7 +20,7 @@ CREATE TABLE [dbo].[CategoryFeatures] (
     CONSTRAINT [FK_CategoryFeatures_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),
 
-    CONSTRAINT [FK_CategoryFeatures_CreateUserID_Users] 
+    CONSTRAINT [FK_CategoryFeatures_ModifyUserID_Users] 
         FOREIGN KEY ([ModifyUserID]) REFERENCES [dbo].[Users] ([ID])
 );
 
