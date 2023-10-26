@@ -7,7 +7,7 @@ CREATE TABLE [dbo].[Customers] (
 
     CONSTRAINT [PK_Customers] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70)
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON)
 );
 
 

@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[CustomerAddresses] (
 
     CONSTRAINT [PK_CustomerAddresses] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_CustomerAddresses_AdministrativeBoundaries] 
         FOREIGN KEY ([AdministrativeBoundaryID]) REFERENCES [dbo].[AdministrativeBoundaries] ([ID]),

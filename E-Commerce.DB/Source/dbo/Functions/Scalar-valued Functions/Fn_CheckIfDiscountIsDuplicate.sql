@@ -7,7 +7,7 @@
 CREATE FUNCTION [dbo].[Fn_CheckIfDiscountIsDuplicate] (
     @pID            INT,
     @pCategoryID    INT         = NULL,
-    @pModelID       INT         = NULL,
+    @pBrandID       INT         = NULL,
     @pProductID     INT         = NULL,
     @pStartDate     DATETIME,
     @pEndDate       DATETIME
@@ -23,9 +23,9 @@ BEGIN
                 @pStartDate BETWEEN d.StartDate AND d.EndDate
                 OR @pEndDate BETWEEN d.StartDate AND d.EndDate
             )
-            AND ((@pCategoryID IS NULL AND CategoryID IS NULL) OR d.CategoryID = @pCategoryID)
-            AND ((@pModelID IS NULL AND ModelID IS NULL) OR d.ModelID = @pModelID)
-            AND ((@pProductID IS NULL AND ProductID IS NULL) OR d.ProductID = @pProductID)
+            AND ((@pCategoryID IS NULL AND CategoryID IS NULL)      OR d.CategoryID = @pCategoryID)
+            AND ((@pBrandID IS NULL AND BrandID IS NULL)            OR d.BrandID = @pBrandID)
+            AND ((@pProductID IS NULL AND ProductID IS NULL)        OR d.ProductID = @pProductID)
             AND d.ID != @pID
             AND d.IsActive = 1
             AND d.IsDeleted = 0

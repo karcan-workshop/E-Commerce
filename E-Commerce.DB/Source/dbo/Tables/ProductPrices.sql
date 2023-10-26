@@ -6,7 +6,7 @@ CREATE TABLE [dbo].[ProductPrices] (
 
     CONSTRAINT [PK_ProductPrices] 
         PRIMARY KEY CLUSTERED ([ProductID] ASC, [Date] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_ProductPrices_Products] 
         FOREIGN KEY ([ProductID]) REFERENCES [dbo].[Products] ([ID]),

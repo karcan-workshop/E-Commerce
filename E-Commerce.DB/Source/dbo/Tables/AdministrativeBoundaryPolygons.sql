@@ -11,7 +11,7 @@ CREATE TABLE [dbo].[AdministrativeBoundaryPolygons] (
 
     CONSTRAINT [PK_AdministrativeBoundaryPolygons] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_AdministrativeBoundaryPolygons_AdministrativeBoundaries] 
         FOREIGN KEY ([AdministrativeBoundaryID]) REFERENCES [dbo].[AdministrativeBoundaries] ([ID]),

@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[ProductImages] (
 
     CONSTRAINT [PK_ProductImages] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_ProductImages_Products] 
         FOREIGN KEY ([ProductID]) REFERENCES [dbo].[Products] ([ID]),

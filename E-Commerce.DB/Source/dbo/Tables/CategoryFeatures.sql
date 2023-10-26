@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[CategoryFeatures] (
 
     CONSTRAINT [PK_CategoryFeatures] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_CategoryFeatures_Categories] 
         FOREIGN KEY ([CategoryID]) REFERENCES [dbo].[Categories] ([ID]),

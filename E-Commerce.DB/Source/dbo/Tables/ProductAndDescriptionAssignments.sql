@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[ProductAndDescriptionAssignments] (
 
     CONSTRAINT [PK_ProductAndDescriptionAssignments]
         PRIMARY KEY CLUSTERED ([ProductID] ASC, [DescriptionID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_ProductAndDescriptionAssignments_Descriptions] 
         FOREIGN KEY ([DescriptionID]) REFERENCES [dbo].[Descriptions] ([ID]),

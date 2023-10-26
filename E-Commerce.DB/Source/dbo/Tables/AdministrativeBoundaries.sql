@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[AdministrativeBoundaries] (
 
     CONSTRAINT [PK_AdministrativeBoundaries] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_AdministrativeBoundaries_AdministrativeBoundaries] 
         FOREIGN KEY ([ParentID]) REFERENCES [dbo].[AdministrativeBoundaries] ([ID]),

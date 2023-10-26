@@ -73,9 +73,9 @@
     <Folder Include="Scripts\Pre Deployments" />
     <Folder Include="Scripts\Post Deployments\Data" />
     <Folder Include="Source\dbo\Functions\Inline Functions" />
+    <Folder Include="Deploy" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Scripts\Post Deployments\Data\Products.sql" />
     <Build Include="Source\dbo\Tables\Brands.sql" />
     <Build Include="Source\dbo\Tables\Categories.sql" />
     <Build Include="Source\dbo\Tables\CategoryFeatures.sql" />
@@ -86,7 +86,6 @@
     <Build Include="Source\dbo\Tables\CustomerSessions.sql" />
     <Build Include="Source\dbo\Tables\Descriptions.sql" />
     <Build Include="Source\dbo\Tables\Discounts.sql" />
-    <Build Include="Source\dbo\Tables\Models.sql" />
     <Build Include="Source\dbo\Tables\ProductAndCategoryAssignments.sql" />
     <Build Include="Source\dbo\Tables\ProductAndDescriptionAssignments.sql" />
     <Build Include="Source\dbo\Tables\ProductFeatures.sql" />
@@ -110,9 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Post Deployments\Data\Users.sql" />
-    <None Include="E-Commerce.DB.publish.xml" />
     <None Include="Scripts\Post Deployments\Data\Categories.sql" />
     <None Include="Scripts\Post Deployments\Data\Discounts.sql" />
+    <None Include="Scripts\Post Deployments\Data\Products.sql" />
+    <None Include="Deploy\E-Commerce.DB.install.xml" />
+    <None Include="Scripts\Post Deployments\Data\Brands.sql" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Condition="'$(NetCoreBuild)' == 'true'">

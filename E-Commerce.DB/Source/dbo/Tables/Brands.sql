@@ -1,5 +1,5 @@
 CREATE TABLE [dbo].[Brands] (
-    [ID]                SMALLINT        NOT NULL        IDENTITY(1, 1),
+    [ID]                INT             NOT NULL        IDENTITY(1, 1),
     [Name]              VARCHAR(64)     NULL,
     [IsActive]          BIT             NOT NULL        CONSTRAINT [DF_Brands_IsActive] DEFAULT ((1)),
     [IsDeleted]         BIT             NOT NULL        CONSTRAINT [DF_Brands_IsDeleted] DEFAULT ((0)),
@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[Brands] (
 
     CONSTRAINT [PK_Brands] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_Brands_CreateUserID_Users] 
         FOREIGN KEY ([CreateUserID]) REFERENCES [dbo].[Users] ([ID]),

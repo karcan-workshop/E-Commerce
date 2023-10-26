@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[ProductReviews] (
 
     CONSTRAINT [PK_ProductReviews] 
         PRIMARY KEY CLUSTERED ([ProductID] ASC, [CustomerID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_ProductReviews_Customers] 
         FOREIGN KEY ([CustomerID]) REFERENCES [dbo].[Customers] ([ID]),

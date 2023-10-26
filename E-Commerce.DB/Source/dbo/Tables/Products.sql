@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[Products] (
     [ID]                        INT             NOT NULL        IDENTITY(1, 1),
     [CategoryID]                INT             NOT NULL,
-    [ModelID]                   INT             NOT NULL,
+    [BrandID]                   INT             NOT NULL,
     [Name]                      VARCHAR(256)    NOT NULL,
     [DefaultProductImageID]     BIGINT          NULL,
     [IsActive]                  BIT             NOT NULL        CONSTRAINT [DF_Products_IsActive] DEFAULT ((1)),
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Products] (
         WITH (FILLFACTOR = 70),
 
     CONSTRAINT [FK_Products_ModelID_Models] 
-        FOREIGN KEY ([ModelID]) REFERENCES [dbo].[Models] ([ID]),
+        FOREIGN KEY ([BrandID]) REFERENCES [dbo].[Brands] ([ID]),
 
     CONSTRAINT [FK_Products_ProductImages] 
         FOREIGN KEY ([DefaultProductImageID]) REFERENCES [dbo].[ProductImages] ([ID]),
@@ -30,8 +30,13 @@ CREATE TABLE [dbo].[Products] (
 GO
 
 CREATE UNIQUE NONCLUSTERED INDEX [UX_Products_ModelID_Name]
-ON [dbo].[Products] ([ModelID] ASC, [Name] ASC)
+ON [dbo].[Products] ([BrandID] ASC, [Name] ASC)
 WHERE ([IsDeleted] = 0 AND [IsActive] = 1)
-WITH (FILLFACTOR = 70)
+WITH (FILLFACTOR = 70, PAD_INDEX = ON)
 GO
 
+CREATE UNIQUE INDEX [IX_Products_Name]
+ON [dbo].[Products] ([Name] ASC)
+WHERE ([IsDeleted] = 0 AND [IsActive] = 1)
+WITH (FILLFACTOR = 70, PAD_INDEX = ON)
+GO

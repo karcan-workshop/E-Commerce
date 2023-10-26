@@ -11,7 +11,7 @@ CREATE TABLE [dbo].[ProductFeatures] (
 
     CONSTRAINT [PK_ProductFeatures] 
         PRIMARY KEY CLUSTERED ([ProductID] ASC, [CategoryFeatureID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_ProductFeatures_CategoryFeatures] 
         FOREIGN KEY ([CategoryFeatureID]) REFERENCES [dbo].[CategoryFeatures] ([ID]),

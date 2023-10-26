@@ -3,5 +3,5 @@ CREATE TABLE [dbo].[CurrencySymbols](
 
     CONSTRAINT [PK_CurrencySymbols]
       PRIMARY KEY CLUSTERED ([Symbol] ASC)
-      WITH (FILLFACTOR = 70)
+      WITH (FILLFACTOR = 70, PAD_INDEX = ON)
 )

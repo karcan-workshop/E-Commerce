@@ -7,7 +7,7 @@ CREATE TABLE [dbo].[CustomerSessions] (
 
     CONSTRAINT [PK_CustomerSessions] 
         PRIMARY KEY CLUSTERED ([ID] ASC)
-        WITH (FILLFACTOR = 70),
+        WITH (FILLFACTOR = 70, PAD_INDEX = ON),
 
     CONSTRAINT [FK_CustomerSessions_CustomerID_Customers] 
         FOREIGN KEY ([CustomerID]) REFERENCES [dbo].[Customers] ([ID])
